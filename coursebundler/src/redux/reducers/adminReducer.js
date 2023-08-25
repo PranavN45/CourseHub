@@ -1,6 +1,5 @@
 import { createReducer } from "@reduxjs/toolkit";
 
-
 export const adminReducer = createReducer({}, {
     getAdminStatsRequest: state => {
         state.loading = true;

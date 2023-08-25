@@ -71,6 +71,7 @@ const Home = () => {
 
       <div className="container2">
         <video
+        autoPlay
           controls
           controlsList="nodownload nofullscreen noremoteplayback"
           disablePictureInPicture

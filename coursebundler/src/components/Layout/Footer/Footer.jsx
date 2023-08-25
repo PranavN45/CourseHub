@@ -1,8 +1,8 @@
 import { Box, HStack, Heading, Stack, VStack } from '@chakra-ui/react';
 import React from 'react';
 import {
-  TiSocialYoutubeCircular,
   TiSocialInstagramCircular,
+  TiSocialLinkedinCircular,
 } from 'react-icons/ti';
 import { DiGithub } from 'react-icons/di';
 const Footer = () => {
@@ -22,13 +22,13 @@ const Footer = () => {
         <HStack spacing={['2', '10']} justifyContent="center"
         color={"white"}
         fontSize={50}>
-            <a href="#" target={'blank'}>
-            <TiSocialYoutubeCircular />
+            <a href="https://www.linkedin.com/in/aditya-ningule/" target={'blank'}>
+            <TiSocialLinkedinCircular />
             </a>
             <a href="https://instagram.com/a_diitz" target={'blank'}>
             <TiSocialInstagramCircular />
             </a>
-            <a href="#" target={'blank'}>
+            <a href="https://github.com/Adii2202" target={'blank'}>
             <DiGithub />
             </a>
         </HStack>

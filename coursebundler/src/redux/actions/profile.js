@@ -112,9 +112,9 @@ export const updateProfilePicture = formdata => async dispatch => {
 
     const { data } = await axios.put(
       'http://localhost:4000/api/v1/updateprofilepicture',
-      {
-        formdata,
-      },
+
+      formdata,
+
       {
         headers: {
           'Content-type': 'multipart/form-data',

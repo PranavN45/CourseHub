@@ -58,7 +58,7 @@ export const loadUser = () => async dispatch => {
   } catch (error) {
     dispatch({ type: 'loadUserFail', payload: error.response.data.message });
   }
-};
+}; 
 
 export const logout = () => async dispatch => {
   try {
@@ -88,7 +88,10 @@ export const buySubscription = () => async dispatch => {
 
     dispatch({ type: 'buySubscriptionSuccess', payload: data.subscriptionId });
   } catch (error) {
-    dispatch({ type: 'buySubscriptionFail', payload: error.response.data.message });
+    dispatch({
+      type: 'buySubscriptionFail',
+      payload: error.response.data.message,
+    });
   }
 };
 
@@ -106,6 +109,9 @@ export const cancelSubscription = () => async dispatch => {
 
     dispatch({ type: 'cancelSubscriptionSuccess', payload: data.message });
   } catch (error) {
-    dispatch({ type: 'cancelSubscriptionFail', payload: error.response.data.message });
+    dispatch({
+      type: 'cancelSubscriptionFail',
+      payload: error.response.data.message,
+    });
   }
 };

@@ -71,7 +71,7 @@ const Course = ({
           <Button colorScheme={'yellow'}>Watch Now</Button>
         </Link>
         <Button
-        isLoading={loading}
+          isLoading={loading}
           variant={'ghost'}
           colorScheme={'yellow'}
           onClick={() => addToPlaylistHandler(id)}
@@ -89,7 +89,7 @@ const Courses = () => {
   const dispatch = useDispatch();
 
   const addToPlaylistHandler = async courseId => {
-    await dispatch(addToPlaylist(courseId))
+    await dispatch(addToPlaylist(courseId));
     dispatch(loadUser());
   };
 
@@ -102,7 +102,10 @@ const Courses = () => {
     'Game Development',
   ];
 
-  const { loading, courses, error, message} = useSelector(state => state.course);
+  const { loading, courses, error, message } = useSelector(
+    state => state.course
+  );
+  console.log({ courses });
 
   useEffect(() => {
     dispatch(getAllCourses(category, keyword));
@@ -116,9 +119,20 @@ const Courses = () => {
     }
   }, [category, keyword, dispatch, error, message]);
 
+  const [allclicked, setallclicked] = useState(false);
+
   return (
     <Container minH={'95vh'} maxW={'container.lg'} paddingY={'8'}>
       <Heading children="All Courses" m={'8'} />
+      <Button onClick={prev => setallclicked(!allclicked)} minW={'60'}>
+        All courses
+      </Button>
+      {allclicked &&
+        courses.map((item, idx) => (
+          <p>
+            {idx + 1}. {item.title}
+          </p>
+        ))}
       <Input
         value={keyword}
         onChange={e => setKeyword(e.target.value)}
@@ -165,7 +179,7 @@ const Courses = () => {
             />
           ))
         ) : (
-          <Heading opacity={"0.5"} mt={"4"} children="Course Not Found" />
+          <Heading opacity={'0.5'} mt={'4'} children="Course Not Found" />
         )}
       </Stack>
     </Container>
